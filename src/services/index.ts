@@ -34,7 +34,7 @@ const handleApiError = (error: any, url: string) => {
 
 const fetcherInstance = {
   async request(url: string, options: any = {}) {
-    const fullUrl = `${apiConfig.baseUrl}${url}`
+    const fullUrl = apiConfig.baseUrl + url
 
     if (!urlExceptAuthorization.includes(url)) {
       const authHeader = await authorization()
@@ -68,36 +68,42 @@ const fetcherInstance = {
     }
   },
 
-  get(url: string, options = {}) {
-    return this.request(url, { ...options, method: 'GET' })
+  get(url: string, options: RequestInit & { cache?: RequestCache } = {}) {
+    const { cache, ...restOptions } = options
+    return this.request(url, { ...restOptions, method: 'GET', cache })
   },
 
-  post(url: string, data: any, options: any = {}) {
+  post(url: string, data: any, options: RequestInit & { cache?: RequestCache } = {}) {
+    const { cache, ...restOptions } = options
     return this.request(url, {
-      ...options,
+      ...restOptions,
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        ...options.headers
+        ...restOptions.headers
       },
-      body: JSON.stringify(data)
+      body: JSON.stringify(data),
+      cache
     })
   },
 
-  put(url: string, data: any, options: any = {}) {
+  put(url: string, data: any, options: RequestInit & { cache?: RequestCache } = {}) {
+    const { cache, ...restOptions } = options
     return this.request(url, {
-      ...options,
+      ...restOptions,
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
-        ...options.headers
+        ...restOptions.headers
       },
-      body: JSON.stringify(data)
+      body: JSON.stringify(data),
+      cache
     })
   },
 
-  delete(url: string, options = {}) {
-    return this.request(url, { ...options, method: 'DELETE' })
+  delete(url: string, options: RequestInit & { cache?: RequestCache } = {}) {
+    const { cache, ...restOptions } = options
+    return this.request(url, { ...restOptions, method: 'DELETE', cache })
   }
 }
 

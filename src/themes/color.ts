@@ -4,7 +4,7 @@ import { DefaultColors } from 'tailwindcss/types/generated/colors'
 type TColorsConfig = {
   'primary-gray': '#2d323c'
   'primary-blue': '#3748A0'
-  'primary-light-blue': '#a8b3cf'
+  'primary-light-gray': '#a8b3cf'
   'primary-blue-1': '#bac1c4'
   'primary-green': '#83b6b3'
   'primary-yellow': '#eedaad'
@@ -15,7 +15,7 @@ type TColorsConfig = {
 export const colorsConfig: TColorsConfig = {
   ...colorsTailwind,
   'primary-gray': '#2d323c',
-  'primary-light-blue': '#a8b3cf',
+  'primary-light-gray': '#a8b3cf',
   'primary-blue': '#3748A0',
   'primary-blue-1': '#bac1c4',
   'primary-green': '#83b6b3',

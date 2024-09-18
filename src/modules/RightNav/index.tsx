@@ -32,11 +32,11 @@ const Login = () => {
 
   return (
     <div className='flex w-full justify-end gap-2'>
-      <IconButton className='size-8 max-h-8 min-w-min max-w-8 md:hidden md:max-h-none md:max-w-none'>
+      {/* <IconButton className='size-8 max-h-8 min-w-min max-w-8 md:hidden md:max-h-none md:max-w-none'>
         <Setting4 />
-      </IconButton>
+      </IconButton> */}
       {/* <Button onClick={handleLogin}>Login With Google</Button> */}
-      <Avatar className='size-8 max-h-8 max-w-8 md:size-10 md:max-h-none md:max-w-none' radius='sm' />
+      <Avatar className='size-10 rounded-full' radius='sm' />
     </div>
   )
 }

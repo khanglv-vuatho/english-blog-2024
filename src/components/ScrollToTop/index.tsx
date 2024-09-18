@@ -32,11 +32,11 @@ function ScrollToTop() {
       aria-label='scroll-to-top'
       onPress={_scrollToTop}
       isIconOnly
-      className={`fixed bottom-10 right-10 z-50 flex min-h-[44px] min-w-[44px] cursor-pointer items-center justify-center rounded-full bg-[#282828] text-white transition  ${
+      className={`fixed bottom-10 right-10 z-50 flex size-10 max-h-10 min-h-10 min-w-10 max-w-10 flex-shrink-0 cursor-pointer items-center justify-center rounded-full bg-[#282828] text-white transition ${
         showTopBtn ? 'translate-y-0' : 'translate-y-[90px]'
       }`}
     >
-      <ArrowUp size={24} className={`${isScrollToTop ? 'duration-300 hover:-translate-y-[20%]' : ''} `} />
+      <ArrowUp size={20} className={`${isScrollToTop ? 'duration-300 hover:-translate-y-[20%]' : ''} `} />
     </Button>
   )
 }

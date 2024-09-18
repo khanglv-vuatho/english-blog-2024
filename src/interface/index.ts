@@ -12,9 +12,17 @@ export interface IArticle {
   updateAt: string | null
   _destroy: boolean
   popular: boolean
+  tags: ITagProps[]
 }
 
 export interface ITagProps {
-  name: string
-  url: string
+  title: string
+  slug: string
+}
+
+export interface IMeta {
+  currentPage: number
+  totalPages: number
+  totalCount: number
+  limit: number
 }

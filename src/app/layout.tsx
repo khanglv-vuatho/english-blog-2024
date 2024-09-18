@@ -13,6 +13,7 @@ export const metadata: Metadata = {
 }
 
 import './globals.css'
+import LeftNav from '@/components/LeftNav'
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -20,8 +21,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={inter.className}>
         <Providers>
           <Header />
-          {children}
-          <Footer />
+          <div className='relative grid grid-cols-6'>
+            <LeftNav />
+            <div className='col-span-5'>{children}</div>
+          </div>
+          {/* <Footer /> */}
         </Providers>
       </body>
     </html>
