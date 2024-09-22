@@ -12,7 +12,7 @@ const Article = ({ item }: { item: IArticle }) => {
         <div className='flex flex-col gap-2'>
           <div className='flex justify-between'>
             <div className='flex w-full items-center gap-2'>
-              <ImageFallback src={item?.thumbnail} className='size-8 rounded-full 2xl:size-10' alt={item?.title} />
+              <ImageFallback src={item?.authorAvatar} className='size-8 rounded-full 2xl:size-10' alt={item?.title} />
             </div>
             <div className='flex w-full items-center justify-end gap-1 text-[#a8b3cf] *:text-xs'>
               <time title={formatTime(item?.createAt)} dateTime={formatTime(item?.createAt)}>

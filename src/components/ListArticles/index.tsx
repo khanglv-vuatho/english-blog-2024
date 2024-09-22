@@ -5,7 +5,7 @@ import Article from '../Article'
 import { Pagination } from '@nextui-org/react'
 import { useRouter } from 'next/navigation'
 
-const ListArticles = ({ meta, posts, loading }: { meta?: IMeta; posts: IArticle[]; loading: boolean }) => {
+const ListArticles = ({ meta, posts }: { meta?: IMeta; posts: IArticle[] }) => {
   const router = useRouter()
   const handleChangePage = (page: number) => {
     const currentUrl = new URL(window.location.href)
@@ -22,9 +22,7 @@ const ListArticles = ({ meta, posts, loading }: { meta?: IMeta; posts: IArticle[
   return (
     <div className='flex flex-col gap-10'>
       <div className='grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-8 2xl:grid-cols-6'>
-        {loading ? (
-          <div className='flex items-center justify-center'>loading...</div>
-        ) : posts.length === 0 ? (
+        {posts?.length === 0 ? (
           <div>No posts found</div>
         ) : (
           posts?.map((item, index) => {

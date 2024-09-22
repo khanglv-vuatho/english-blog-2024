@@ -26,7 +26,7 @@ const LeftNav = () => {
     }
   ]
   return (
-    <div className='sticky left-0 top-[57px] flex h-[calc(100dvh-57px)] flex-col justify-between border-r border-primary-gray py-4'>
+    <div className='sticky left-0 top-[57px] hidden h-[calc(100dvh-57px)] flex-col justify-between border-r border-primary-gray py-4 md:flex'>
       <div className='flex flex-col'>
         {navbar.map((item, index) => (
           <Link href={item.url} key={index} className={`flex items-center gap-2 px-2 py-1 transition ${active === index ? 'bg-[#a8b3cf33]' : 'bg-transparent hover:bg-[#a8b3cf33] hover:text-white'}`}>

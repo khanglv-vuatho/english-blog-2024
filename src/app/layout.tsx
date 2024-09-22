@@ -21,7 +21,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={inter.className}>
         <Providers>
           <Header />
-          <div className='relative grid grid-cols-6'>
+          <div className='relative grid grid-cols-1 md:grid-cols-6'>
             <LeftNav />
             <div className='col-span-5'>{children}</div>
           </div>

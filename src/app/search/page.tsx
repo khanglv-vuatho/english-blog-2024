@@ -11,7 +11,7 @@ const SearchPage = async ({ searchParams }: { searchParams: { keyword: string } 
   }
   console.log({ search: createSlug(searchParams?.keyword).replace(/-/g, ' ') })
   return (
-    <div className='flex flex-col justify-center gap-8 p-4 px-20 md:pt-10'>
+    <div className='flex flex-col justify-center gap-8 p-4 px-8 md:px-20 md:pt-10'>
       <ListArticles posts={searchResult?.posts} />
     </div>
   )

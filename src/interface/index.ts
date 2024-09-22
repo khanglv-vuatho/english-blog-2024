@@ -13,6 +13,8 @@ export interface IArticle {
   _destroy: boolean
   popular: boolean
   tags: ITagProps[]
+  author: string
+  authorAvatar: string
 }
 
 export interface ITagProps {
